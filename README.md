@@ -1,8 +1,11 @@
 
-# Face-Manipulator 
+# Face Manipulator
+![face manipulator image](assets/face_manipulator.jpg) 
+*Left and Right are n't mirror*
 ## Running the app
 
 ### Run with CLI
+*CLI version just change `left_eye` and `nose`*
 ```bash
 usage: face_manipulator.py [-h] -i image file path -t [-100-100]
 
