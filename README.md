@@ -27,7 +27,7 @@ pip install -e .
 ```
 #### import package
 ```python
-face_manipulator
+from face_manipulator import face_manipulator
 ```
 ### setup ENV and install packages
 best way is create isolate environment with python virtualenv
