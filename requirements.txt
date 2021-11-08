@@ -1,0 +1,5 @@
+# required
+numpy
+opencv-python
+imutils
+dlib
