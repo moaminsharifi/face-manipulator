@@ -1,7 +1,7 @@
 
 # Face Manipulator
 ![face manipulator image](assets/face_manipulator.jpg) 
-*Left and Right are n't mirror*
+*Left and Right Face Sides are not mirror*
 ## Running the app
 
 ### Run with CLI
