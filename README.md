@@ -47,5 +47,5 @@ pip install pytest
 ```
 then run 
 ```bash
-pytest
+pytest tests/
 ```
