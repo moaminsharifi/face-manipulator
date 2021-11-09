@@ -16,15 +16,15 @@ def test_initialize_detector():
 
 
 def test_initialize_predictor():
-    assert type(initialize_predictor(
-        'shape_predictor_68_face_landmarks.dat')) == dlib.shape_predictor
-
+    assert (
+        type(initialize_predictor("shape_predictor_68_face_landmarks.dat"))
+        == dlib.shape_predictor
+    )
 
 
 def test_initialize_predictor_fail():
     with pytest.raises(Exception) as e_info:
-        initialize_predictor('SOME_RANDOM_PREDICTOR.dat')
-        
+        initialize_predictor("SOME_RANDOM_PREDICTOR.dat")
 
 
 def part_of_face_detection():
@@ -35,4 +35,3 @@ def part_of_face_detection():
     # find diffrent face parts
     face_parts = part_of_face_detection(image_gray, rects, predictor)
     assert type(face_parts) == dict
-    

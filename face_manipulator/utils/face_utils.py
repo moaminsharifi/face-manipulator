@@ -5,15 +5,17 @@ import dlib
 from .path import is_path_valid
 from .image import dlib_pybind11_shape_to_np_converter
 
-FACIAL_LANDMARKS_IDXS = OrderedDict([
-    ("mouth", (48, 68)),
-    ("right_eyebrow", (17, 22)),
-    ("left_eyebrow", (22, 27)),
-    ("right_eye", (36, 42)),
-    ("left_eye", (42, 48)),
-    ("nose", (27, 35)),
-    ("jaw", (0, 17))
-])
+FACIAL_LANDMARKS_IDXS = OrderedDict(
+    [
+        ("mouth", (48, 68)),
+        ("right_eyebrow", (17, 22)),
+        ("left_eyebrow", (22, 27)),
+        ("right_eye", (36, 42)),
+        ("left_eye", (42, 48)),
+        ("nose", (27, 35)),
+        ("jaw", (0, 17)),
+    ]
+)
 
 
 def initialize_detector():
@@ -35,14 +37,14 @@ def initialize_predictor(predictor_type: str):
         dlib.shape_predictor: predictor
     """
     predictor_path = os.path.join(os.path.dirname(__file__), predictor_type)
-    assert is_path_valid(
-        predictor_path), f"Predictor not exist in {predictor_path}"
+    assert is_path_valid(predictor_path), f"Predictor not exist in {predictor_path}"
     predictor = dlib.shape_predictor(predictor_path)
     return predictor
 
 
-def detect_parts(face_image: np.ndarray,
-                 predictor_type="shape_predictor_68_face_landmarks.dat") -> tuple:
+def detect_parts(
+    face_image: np.ndarray, predictor_type="shape_predictor_68_face_landmarks.dat"
+) -> tuple:
     """detect diffrent part of the face
 
     Args:
@@ -58,7 +60,9 @@ def detect_parts(face_image: np.ndarray,
     return rects, predictor
 
 
-def part_of_face_detection(image: np.ndarray, rects: np.ndarray, predictor: dlib.shape_predictor) -> dict:
+def part_of_face_detection(
+    image: np.ndarray, rects: np.ndarray, predictor: dlib.shape_predictor
+) -> dict:
     """Detect Diffrents part of the face
 
     Args:

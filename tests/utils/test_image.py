@@ -2,6 +2,7 @@ import pytest
 import numpy as np
 from face_manipulator.utils.image import *
 
+
 def test_open_image():
     """Testing open_image"""
     image = open_image("tests/assets/front-girl.jpg")
@@ -11,10 +12,10 @@ def test_open_image():
 
 def test_open_image_fail():
     """Testing open_image with invalid image file path"""
-    random_file_path = 'random_not_excited/image.png'
+    random_file_path = "random_not_excited/image.png"
     im = open_image(random_file_path)
     assert im is None
-   
+
 
 def test_make_gray():
     """Testing open_image and make it gray"""
@@ -27,7 +28,7 @@ def test_make_gray():
 def test_make_gray_fail():
     """Testing make_gray with invalid input"""
     with pytest.raises(Exception) as e_info:
-        make_gray('str')
+        make_gray("str")
 
 
 def test_dlib_pybind11_shape_to_np_converter():
