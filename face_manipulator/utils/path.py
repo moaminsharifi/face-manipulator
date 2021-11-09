@@ -44,3 +44,17 @@ def validate_path(path: str) -> str:
     assert is_path_valid(path), "Path does not exist"
     assert is_file_ext_valid(path), "file extension must be a valid file extension and in " + str(VALID_EXT)
     return path
+def make_save_file_path(path: str) -> str:
+    """Make save file path
+
+    Args:
+        path (str): file path
+
+    Returns:
+        str: file path with _manipulated added between file name and extension
+    """
+    base_file_dir = os.path.dirname(path)
+    file_name = os.path.splitext(path)
+    full_path_for_save = os.path.join(
+        base_file_dir, file_name[0] + '_manipulated' + file_name[1])
+    return full_path_for_save
