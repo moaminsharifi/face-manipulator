@@ -7,7 +7,7 @@
 ### Run with CLI
 *CLI version just change `left_eye` and `nose`*
 ```bash
-usage: face_manipulator.py [-h] -i image file path -t [-100-100]
+usage: face_manipulator.py [-h] -i image_file_path -t [-100-100]
 
 optional arguments:
   -h, --help            show this help message and exit
