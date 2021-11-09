@@ -36,7 +36,7 @@ def initialize_predictor(predictor_type: str):
     """
     predictor_path = os.path.join(os.path.dirname(__file__), predictor_type)
     assert is_path_valid(
-        predictor_path), "Predictor not exist in %s" % predictor_path
+        predictor_path), f"Predictor not exist in {predictor_path}"
     predictor = dlib.shape_predictor(predictor_path)
     return predictor
 
