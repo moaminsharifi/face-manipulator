@@ -1,5 +1,7 @@
 # required
-numpy
-opencv-python
-imutils
-dlib
+dlib>=19.22.1
+imutils>=0.5.4
+numpy>=1.21.4
+opencv-python>=4.5.4.58
+
+
