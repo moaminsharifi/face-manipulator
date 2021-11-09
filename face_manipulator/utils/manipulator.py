@@ -45,8 +45,10 @@ def face_part_manipulator(image: np.ndarray,
         # find new center point
         x_org_center, y_org_center = int(x + w / 2), int(y + h / 2)
         h_new, w_new , _= face_part_image_resized.shape
+        
         start_x = int(x_org_center - w_new / 2)
         start_y = int(y_org_center - h_new / 2)
+        
         end_x = start_x + w_new
         end_y = start_y + h_new
 
