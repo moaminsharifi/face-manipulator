@@ -1,5 +1,5 @@
 import pytest
-from face_manipulator.utils.path import is_file_ext_valid, is_path_valid, validate_path
+from face_manipulator.utils.path import is_file_ext_valid, is_path_valid, validate_path, make_save_file_path
 
 
 
@@ -50,3 +50,10 @@ def test_validate_path_fail_with_invalid_path_exception():
     random_file_path = 'RANDOM_NOT_EXIST_FILE/image.PNG'
     with pytest.raises(Exception) as e_info:
         validate_path(random_file_path)
+
+
+def test_make_save_file_path(tmpdir):
+    tmpdir.mkdir("sub").join("image.png").write("content")
+    random_file_path = str(tmpdir / 'sub' / 'image.png')
+    expected_file_path = str(tmpdir / 'sub' / 'image_manipulated.png')
+    assert expected_file_path == make_save_file_path(random_file_path)
