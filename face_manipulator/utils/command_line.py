@@ -13,7 +13,7 @@ def parse_args() -> dict:
                         "--image",
                         required=True,
                         type=validate_path,
-                        metavar="image file path",
+                        metavar="image_file_path",
                         help="image file path ex: selfie_image_path.[jpg|png]")
     parser.add_argument("-t",
                         "--threshold",
